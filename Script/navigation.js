@@ -1,7 +1,7 @@
 let lightmode = false;
 
 document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
-    window.open("https://discord.gg/CUbwjYHt");
+    window.open("https://discord.gg/cZdxhc2Q");
 })
 
 document.getElementById("night-light-mode").addEventListener("click", ()=>{
