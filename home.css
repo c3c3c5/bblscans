@@ -28,6 +28,8 @@
     --button-image: url(./img/discord-button1.png);
     --border-searchbar: none;
     --color-undertextmenu: white;
+    --backgroundbuttonswitch: white;
+    --ball-background: black;
 }
 
 .light-theme {
@@ -40,6 +42,8 @@
     --border-searchbar: gray;
     --color-undertextmenu: black;
     --button-image: url(./img/discord-button-lighttheme.png);
+    --backgroundbuttonswitch: black;
+    --ball-background: rgb(255, 255, 255);
 }
 
 body {
@@ -197,7 +201,7 @@ main {
 
 input {
     color: var(--font-color);
-    font-family: "saveursans";
+    font-family: "arial";
 }
 
 input:focus {
@@ -235,4 +239,43 @@ a:hover::after {
 .currentpage {
     padding-bottom: 40px;
     border-bottom: 3px solid var(--color-undertextmenu);
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#labelcheck {
+    width: 100px;
+    height: 50px;
+    background-color: var(--backgroundbuttonswitch);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+}
+
+#labelcheck:hover {
+    cursor: pointer;
+}
+
+#ball {
+    height: 40px;
+    width: 40px;
+    background: var(--ball-background);
+    border-radius: 100px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s linear;
+}
+
+input:checked + #labelcheck #ball {
+    transform: translateX(49px);
+}
+
+#check {
+    display: none;
 }
