@@ -1,6 +1,6 @@
 let lightmode = localStorage.getItem("light-mode");
 
-if (lightmode == "true"){
+if (lightmode === "true"){
     enablelightmode();
 } else {
     disablelightmode();
@@ -21,7 +21,7 @@ document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
 })
 
 document.getElementById("night-light-mode").addEventListener("click", ()=>{
-    if (localStorage.getItem("light-mode") == "true") {
+    if (localStorage.getItem("light-mode") === "true") {
         enablelightmode();
         document.getElementById("night-light-mode").style.backgroundColor = "white";
         document.getElementById("night-light-mode").style.borderColor = "black";
