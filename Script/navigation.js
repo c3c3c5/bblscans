@@ -39,3 +39,9 @@ document.getElementById("night-light-mode").addEventListener("click", ()=>{
 document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
     window.open("https://discord.gg/cZdxhc2Q");
 })
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    if (document.querySelector(".titre").textContent == "Home"){
+        document.querySelectorAll(".menu-link")[0].classList.add("currentpage");
+    }
+})

@@ -231,3 +231,8 @@ a:hover::after {
     transition: width 0.3s linear;
     width: 100%;
 }
+
+.currentpage {
+    padding-bottom: 40px;
+    border-bottom: 3px solid var(--color-undertextmenu);
+}
