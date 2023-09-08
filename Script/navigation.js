@@ -1,6 +1,6 @@
 let lightmode = localStorage.getItem("light-mode");
 
-if (lightmode === "true"){
+if (lightmode == "true"){
     enablelightmode();
 } else {
     disablelightmode();
@@ -16,12 +16,8 @@ function disablelightmode(){
     localStorage.setItem("light-mode", "false");
 }
 
-document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
-    window.open("https://discord.gg/cZdxhc2Q");
-})
-
 document.getElementById("night-light-mode").addEventListener("click", ()=>{
-    if (localStorage.getItem("light-mode") === "true") {
+    if (localStorage.getItem("light-mode") == "false") {
         enablelightmode();
         document.getElementById("night-light-mode").style.backgroundColor = "white";
         document.getElementById("night-light-mode").style.borderColor = "black";
@@ -38,5 +34,8 @@ document.getElementById("night-light-mode").addEventListener("click", ()=>{
         document.getElementById("fa-moon").classList.add("fa-sun");
         document.getElementById("imgbutton").setAttribute("src", "/img/discord-button.png")
     }
+})
 
+document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
+    window.open("https://discord.gg/cZdxhc2Q");
 })
