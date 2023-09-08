@@ -44,3 +44,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
         document.querySelectorAll(".menu-link")[0].classList.add("currentpage");
     }
 })
+
+document.getElementById("logo").addEventListener("mouseover", ()=>{
+    document.getElementById("logo").classList.add("scaleuplogo");
+    document.getElementById("logo").classList.remove("downscallogo");
+})
+
+document.getElementById("logo").addEventListener("mouseout", ()=>{
+    document.getElementById("logo").classList.remove("scaleuplogo");
+    document.getElementById("logo").classList.add("downscallogo");
+})
