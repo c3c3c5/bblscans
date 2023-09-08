@@ -1,0 +1,229 @@
+@font-face {
+    font-family: "saveursans";
+    src: url(/fonts/Saveur_Sans_Round/Saveur_Sans_Round/SaveurSansRound-Regular.ttf);
+}
+
+@font-face {
+    font-family: "unisans";
+    src: url(/fonts/UniSansHeavyCAPS/Uni\ Sans\ Heavy.otf);
+}
+
+@font-face {
+    font-family: "madrigal";
+    src: url(/fonts/hunter-rising-cufonfonts/HunterRising-ywZ1M.ttf);
+}
+
+:root {
+    --primary-color: rgb(28,25,37);
+    --primary-color-gradient: linear-gradient(90deg, rgba(28,25,37,1) 0%, rgba(0,0,0,1) 100%);
+    --font-color: white;
+    --logo-border-radius-color: white;
+    --button-on-click-border: white;
+    --background-img-url: url(./img/banner.png);
+    --button-image: url(./img/discord-button1.png);
+    --border-searchbar: none;
+    --color-undertextmenu: white;
+}
+
+.light-theme {
+    --primary-color: rgb(255, 255, 255);
+    --primary-color-gradient: linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 100%);
+    --font-color: black;
+    --logo-border-radius-color: black;
+    --button-on-click-border: black;
+    --background-img-url: url(./img/banner-light-mode.png);
+    --border-searchbar: gray;
+    --color-undertextmenu: black;
+    --button-image: url(./img/discord-button-lighttheme.png);
+}
+
+body {
+    margin: 0px;
+    position: relative;
+    min-height: 100vh;
+    background-color: #27292d;
+    background-image: var(--background-img-url);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: var(--primary-color);
+    background: var(--primary-color-gradient);
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+}
+
+.dark-mode {
+    background-color: white;
+}
+
+#joindiscordbutton {
+    background: var(--primary-color);
+    background: var(--primary-color-gradient);
+    width: 280px;
+    height: 95px;
+    border-radius: 16px;
+    border: none;
+    padding: 0px;
+    animation-name: downscalebutton;
+    animation-duration: 0.3s;
+    border: 3px solid gray;
+}
+
+#joindiscordbutton:active {
+    border: 3px solid var(--button-on-click-border);
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    background: var(--primary-color);
+    background: var(--primary-color-gradient);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#logo {
+    height: 65px;
+    border-radius: 50%;
+    border: 3px solid var(--logo-border-radius-color);
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+span {
+    color: var(--font-color);
+    font-family: "madrigal";
+    font-size: 2.5em;
+}
+
+#joindiscordbutton img {
+    width: 100%;
+    height: 100%;
+}
+
+#joindiscordbutton:hover {
+    cursor: pointer;
+    animation-name: scalebutton;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scalebutton {
+    from {transform: scale(1);}
+    to {transform: scale(1.05);}
+}
+
+@keyframes downscalebutton {
+    from {transform: scale(1.05);}
+    to {transform: scale(1);}
+}
+
+#discordlogo {
+    height: 50px;
+}
+
+ul {
+    margin-left: -225px;
+    margin-top: 25px;
+}
+
+#night-light-mode {
+    margin-top: 6px;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 40px;
+    border: 4px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#night-light-mode:hover {
+    cursor: pointer;
+} 
+
+#fa-moon {
+    color: white;
+}
+
+main {
+    text-align: center;
+}
+
+#search-bar {
+    background: var(--primary-color);
+    background: var(--primary-color-gradient);
+    margin-top: 30px;
+    padding-left: 12px;
+    width: 800px;
+    height: 40px;
+    border-radius: 12px;
+    border: 2px solid var(--border-searchbar);
+}
+
+input {
+    color: var(--font-color);
+    font-family: "saveursans";
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--font-color);
+    font-family: "saveursans";
+    letter-spacing: 2px;
+}
+
+a {
+    position: relative;
+    text-transform: uppercase;
+    font-family: "saveursans";
+    font-size: 1.3em;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: var(--color-undertextmenu);
+    top: 63px;
+    left: 0px;
+}
+
+a:hover::after {
+    transition: width 0.3s linear;
+    width: 100%;
+}
