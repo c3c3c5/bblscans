@@ -59,7 +59,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    height: 75px;
+    height: 50px;
     padding: 20px;
     background: var(--primary-color);
     background: var(--primary-color-gradient);
@@ -189,7 +189,7 @@ span {
 
 ul {
     margin-left: -225px;
-    margin-top: 29px;
+    margin-top: 15px;
 }
 
 #night-light-mode {
@@ -255,7 +255,7 @@ a::after {
     width: 0%;
     height: 3px;
     background-color: var(--color-undertextmenu);
-    top: 63px;
+    top: 52px;
     left: 0px;
 }
 
@@ -265,7 +265,7 @@ a:hover::after {
 }
 
 .currentpage {
-    padding-bottom: 40px;
+    padding-bottom: 29px;
     border-bottom: 3px solid var(--color-undertextmenu);
 }
 
