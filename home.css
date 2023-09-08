@@ -206,7 +206,7 @@ input:focus {
 
 input::placeholder {
     color: var(--font-color);
-    font-family: "saveursans";
+    font-family: "arial";
     letter-spacing: 2px;
 }
 
