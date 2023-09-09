@@ -361,7 +361,7 @@ input:checked + #labelcheck #ball {
     position: relative;
     display: inline-block;
     width: 97%;
-    height: 71%;
+    height: 72.5%;
     border: 4px solid var(--borderimageallreleases);
 }
 
