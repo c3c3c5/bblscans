@@ -33,6 +33,7 @@
     --hoverbuttonnewchap: #ece6e6;
     --borderimageallreleases: #3a3838;
     --starscolor: gold;
+    --secondaryfontcolor: #dadada;
 }
 
 .light-theme {
@@ -50,6 +51,7 @@
     --hoverbuttonnewchap: #5c5858;
     --borderimageallreleases: #c2bcbc;
     --starscolor: rgb(238, 204, 13);
+    --secondaryfontcolor: black;
 }
 
 body {
@@ -427,7 +429,21 @@ input:checked + #labelcheck #ball {
 }
 
 #allreleasestext {
-    color: var(--font-color);
+    color: var(--secondaryfontcolor);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
+}
+
+.fa-magnifying-glass {
+    color: var(--secondaryfontcolor);
+    background-color: black;
+    height: 40px;
+    width: 50px;
+    margin-bottom: 50px;
+}
+
+#searchbarcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
