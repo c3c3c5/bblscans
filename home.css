@@ -359,6 +359,32 @@ input:checked + #labelcheck #ball {
     border: 3px solid var(--borderimageallreleases);
 }
 
+@keyframes scaleupcardcontainer {
+    to {transform: scale(1.02);}
+}
+
+@keyframes downscalecardcontainer {
+    from {transform: scale(1.02)}
+    to {transform: scale(1);}
+}
+
+#card-container:hover {
+    cursor: pointer;
+}
+
+
+.scaleupcardcontainer {
+    animation-name: scaleupcardcontainer;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.downscalecardcontainer {
+    animation-name: downscalecardcontainer;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
 #image-container {
     position: relative;
     display: inline-block;

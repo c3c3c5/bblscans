@@ -54,3 +54,14 @@ document.getElementById("logo").addEventListener("mouseout", ()=>{
     document.getElementById("logo").classList.remove("scaleuplogo");
     document.getElementById("logo").classList.add("downscallogo");
 })
+
+document.querySelectorAll("#card-container").forEach((c,i)=>{
+    c.addEventListener("mouseover", ()=>{
+        document.querySelectorAll("#card-container")[i].classList.add("scaleupcardcontainer");
+        document.querySelectorAll("#card-container")[i].classList.remove("downscalecardcontainer");
+    })
+    c.addEventListener("mouseout", ()=>{
+        document.querySelectorAll("#card-container")[i].classList.remove("scaleupcardcontainer");
+        document.querySelectorAll("#card-container")[i].classList.add("downscalecardcontainer");
+    })
+})
