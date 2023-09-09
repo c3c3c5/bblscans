@@ -62,6 +62,7 @@ body {
     background-image: var(--background-img-url);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
