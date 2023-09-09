@@ -483,3 +483,18 @@ input:checked + #labelcheck #ball {
         gap: 35px;
     }
 }
+
+@media (max-width: 565px) {
+    .currentpage {
+        padding-bottom: 40px;
+        border-bottom: 3px solid transparent;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
