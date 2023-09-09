@@ -20,6 +20,7 @@
 
 :root {
     --primary-color: rgb(28,25,37);
+    --primary-color-cards: rgb(28,25,37);
     --primary-color-gradient: linear-gradient(90deg, rgba(28,25,37,1) 0%, rgba(0,0,0,1) 100%);
     --font-color: white;
     --logo-border-radius-color: white;
@@ -191,11 +192,6 @@ span {
 
 #discordlogo {
     height: 50px;
-}
-
-ul {
-    margin-left: -225px;
-    margin-top: 15px;
 }
 
 #night-light-mode {
