@@ -499,10 +499,3 @@ input:checked + #labelcheck #ball {
         height: 50px;
     }
 }
-
-@media (max-width: 704px){
-    #all-releases {
-        width: 100%;
-    }
-}
-
