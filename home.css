@@ -500,4 +500,9 @@ input:checked + #labelcheck #ball {
     }
 }
 
+@media (max-width: 704px){
+    #all-releases {
+        width: 100%;
+    }
+}
 
