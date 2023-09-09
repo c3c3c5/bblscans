@@ -248,7 +248,7 @@ main {
     border: 2px solid var(--border-searchbar);
 }
 
-input::placeholder {
+#search::placeholder {
     color: var(--font-color);
     font-family: "searchbtn";
     letter-spacing: 0px;
@@ -256,7 +256,7 @@ input::placeholder {
     color: #73767a;
 }
 
-input:focus::placeholder {
+#search:focus::placeholder {
     color: var(--searchtext);
 }
 
@@ -318,7 +318,7 @@ a:not(#newestchap):hover::after {
     transition: transform 0.3s linear;
 }
 
-input:checked + #labelcheck #ball {
+#check:checked + #labelcheck #ball {
     transform: translateX(49px);
 }
 
@@ -425,12 +425,12 @@ input:checked + #labelcheck #ball {
     left: 4px;
     background-color: #a12e24;
     color: white;
-    padding: 10px;
-    padding-bottom: 1px;
-    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: "Bebas Neue";
     font-weight: 100;
     font-size: 1.5em;
+    padding-top: 2px;
     border-radius: 6px;
 }
 
@@ -469,12 +469,6 @@ input:checked + #labelcheck #ball {
     color: var(--secondaryfontcolor);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
-}
-
-#searchbarcontainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #rightside {
@@ -519,7 +513,6 @@ input:checked + #labelcheck #ball {
     border: none;
     background-color: transparent;
     color: var(--font-color);
-    letter-spacing: -20px;
 }
 
 #search:focus + #ball1 {
