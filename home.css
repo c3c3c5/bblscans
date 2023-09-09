@@ -116,6 +116,7 @@ ul {
     list-style-type: none;
     display: flex;
     margin-top: 25px;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
