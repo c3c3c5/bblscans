@@ -130,7 +130,7 @@ footer {
 
 ul {
     list-style-type: none;
-    display: flex;
+    display: none;
     margin-top: 25px;
     flex-wrap: wrap;
     gap: 30px;
