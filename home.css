@@ -69,12 +69,13 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    min-height: 50px;
     padding: 20px;
     background: var(--primary-color);
     background: var(--primary-color-gradient);
     opacity: 0.8;
     backdrop-filter: blur(10px);
+    flex-wrap: wrap;
 }
 
 .dark-mode {
@@ -114,6 +115,7 @@ footer {
 ul {
     list-style-type: none;
     display: flex;
+    margin-top: 25px;
     gap: 30px;
 }
 
@@ -257,7 +259,7 @@ a:not(#newestchap):after {
     width: 0%;
     height: 3px;
     background-color: var(--color-undertextmenu);
-    top: 52px;
+    top: 63px;
     left: 0px;
 }
 
@@ -267,7 +269,7 @@ a:not(#newestchap):hover::after {
 }
 
 .currentpage {
-    padding-bottom: 29px;
+    padding-bottom: 40px;
     border-bottom: 3px solid var(--color-undertextmenu);
 }
 
@@ -469,4 +471,14 @@ input:checked + #labelcheck #ball {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 960px) { /* when the width is less than 30em, make both of the widths 100% */
+    header, footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+    }
 }
