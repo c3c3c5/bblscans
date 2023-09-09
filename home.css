@@ -35,6 +35,9 @@
     --borderimageallreleases: #3a3838;
     --starscolor: gold;
     --secondaryfontcolor: #dadada;
+    --body-background-color: #27292d;
+    --background-searchbutton: white;
+    --background2: black;
 }
 
 .light-theme {
@@ -53,17 +56,16 @@
     --borderimageallreleases: #c2bcbc;
     --starscolor: rgb(238, 204, 13);
     --secondaryfontcolor: black;
+    --body-background-color: #D8D6D2;
+    --background-searchbutton: black;
+    --background2: white;
 }
 
 body {
     margin: 0px;
     position: relative;
     min-height: 100vh;
-    background-color: #27292d;
-    background-image: var(--background-img-url);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: var(--body-background-color);
 }
 
 header {
@@ -460,18 +462,69 @@ input:checked + #labelcheck #ball {
     font-weight: 100;
 }
 
-.fa-magnifying-glass {
-    color: var(--secondaryfontcolor);
-    background-color: black;
-    height: 40px;
-    width: 50px;
-    margin-bottom: 50px;
-}
-
 #searchbarcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#rightside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#searchbar-container {
+    width: 200px;
+    height: 50px;
+    border-radius: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background2);
+    border: 2px solid var(--background-searchbutton);
+}
+
+#ball1 {
+    width: 0%;
+    height: 94.5%;
+    border-radius: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#search {
+    width: 100%;
+    height: 90%;
+    border-radius: 200px 200px 200px 200px;
+    padding-left: 15px;
+    border: none;
+    background-color: transparent;
+    color: var(--font-color);
+}
+
+#search::placeholder {
+    color: var(--font-color);
+}
+
+#search:focus + #ball1 {
+    transition: width 0.2s linear;
+    width: 40%;
+}
+
+#search:focus + #ball1 .fa-magnifying-glass {
+    color: var(--font-color);
+}
+
+#search:focus {
+    outline: none;
+}
+
+.fa-magnifying-glass {
+    color: transparent;
 }
 
 @media (max-width: 960px) { /* when the width is less than 30em, make both of the widths 100% */
