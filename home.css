@@ -1,4 +1,9 @@
 @font-face {
+    font-family: "searchbtn";
+    src: url(/fonts/sf-ui-text-2-cufonfonts-webfont/SFUIText-Regular.woff);
+}
+
+@font-face {
     font-family: "saveursans";
     src: url(/fonts/Saveur_Sans_Round/Saveur_Sans_Round/SaveurSansRound-Regular.ttf);
 }
@@ -19,7 +24,11 @@
 }
 
 :root {
-    --primary-color: rgb(28,25,37);
+    --bordermod3: rgba(255, 255, 255, 0.493);
+    --bordermod2: white;
+    --searchtext: white;
+    --bordersearchbar: #898b8f;
+    --primary-color: #1E1F22;
     --primary-color-cards: rgb(28,25,37);
     --primary-color-gradient: linear-gradient(90deg, rgba(28,25,37,1) 0%, rgba(0,0,0,1) 100%);
     --font-color: white;
@@ -35,13 +44,18 @@
     --borderimageallreleases: #3a3838;
     --starscolor: gold;
     --secondaryfontcolor: #dadada;
-    --body-background-color: #27292d;
+    --body-background-color: #2B2D31;
     --background-searchbutton: white;
     --background2: black;
+    --borderdiscordlogo: white;
 }
 
 .light-theme {
-    --primary-color: rgb(255, 255, 255);
+    --bordermod3: rgba(68, 64, 64, 0.664);
+    --bordermod2: black;
+    --searchtext: black;
+    --bordersearchbar: #595a5c;
+    --primary-color: #e8eaec;
     --primary-color-gradient: linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 100%);
     --font-color: black;
     --logo-border-radius-color: black;
@@ -56,9 +70,10 @@
     --borderimageallreleases: #c2bcbc;
     --starscolor: rgb(238, 204, 13);
     --secondaryfontcolor: black;
-    --body-background-color: #D8D6D2;
+    --body-background-color: #cacccea8;
     --background-searchbutton: black;
     --background2: white;
+    --borderdiscordlogo: #202124;
 }
 
 body {
@@ -74,7 +89,6 @@ header {
     min-height: 50px;
     padding: 20px;
     background: var(--primary-color);
-    background: var(--primary-color-gradient);
     opacity: 0.8;
     backdrop-filter: blur(10px);
     flex-wrap: wrap;
@@ -94,22 +108,22 @@ header {
     padding: 0px;
     animation-name: downscalebutton;
     animation-duration: 0.3s;
-    border: 3px solid gray;
+    display: none;
 }
 
 #joindiscordbutton:active {
-    border: 3px solid var(--button-on-click-border);
+    border: 2px solid var(--button-on-click-border);
 }
 
 footer {
+    border-top: 2px solid var(--font-color);
     position: sticky;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     height: 75px;
     padding: 20px;
-    background: var(--primary-color);
-    background: var(--primary-color-gradient);
+    background: transparent;
     top: 100%;
     backdrop-filter: blur(10px);
 }
@@ -234,19 +248,16 @@ main {
     border: 2px solid var(--border-searchbar);
 }
 
-input {
-    color: var(--font-color);
-    font-family: "arial";
-}
-
-input:focus {
-    outline: none;
-}
-
 input::placeholder {
     color: var(--font-color);
-    font-family: "arial";
-    letter-spacing: 2px;
+    font-family: "searchbtn";
+    letter-spacing: 0px;
+    font-size: 1.1em;
+    color: #73767a;
+}
+
+input:focus::placeholder {
+    color: var(--searchtext);
 }
 
 a:not(#newestchap) {
@@ -286,7 +297,7 @@ a:not(#newestchap):hover::after {
     width: 100px;
     height: 50px;
     background-color: var(--backgroundbuttonswitch);
-    border-radius: 100px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
 }
@@ -298,8 +309,8 @@ a:not(#newestchap):hover::after {
 #ball {
     height: 40px;
     width: 40px;
-    background: var(--ball-background);
-    border-radius: 100px;
+    background: var(--primary-color);
+    border-radius: 6px;
     margin-left: 5px;
     display: flex;
     justify-content: center;
@@ -353,12 +364,9 @@ input:checked + #labelcheck #ball {
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 #card-container {
-    height: 334px;
+    height: 450px;
     width: 230px;
-    background-color: var(--primary-color);
-    background: var(--primary-color-gradient);
     border-radius: 6px;
-    border: 3px solid var(--borderimageallreleases);
 }
 
 @keyframes scaleupcardcontainer {
@@ -373,7 +381,6 @@ input:checked + #labelcheck #ball {
 #card-container:hover {
     cursor: pointer;
 }
-
 
 .scaleupcardcontainer {
     animation-name: scaleupcardcontainer;
@@ -390,15 +397,15 @@ input:checked + #labelcheck #ball {
 #image-container {
     position: relative;
     display: inline-block;
-    width: 97%;
+    width: 100%;
     height: 72.5%;
-    border: 4px solid var(--borderimageallreleases);
 }
 
 #image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 6px;
 }
 
 #type {
@@ -409,6 +416,7 @@ input:checked + #labelcheck #ball {
     color: white;
     padding: 7px;
     font-family: "evo";
+    border-radius: 6px;
 }
 
 #language {
@@ -417,30 +425,31 @@ input:checked + #labelcheck #ball {
     left: 4px;
     background-color: #a12e24;
     color: white;
-    padding: 5px;
+    padding: 10px;
     padding-bottom: 1px;
     padding-top: 1px;
     font-family: "Bebas Neue";
     font-weight: 100;
     font-size: 1.5em;
+    border-radius: 6px;
 }
 
 #title {
     color: var(--font-color);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3em;
+    font-size: 1.15em;
 }
 
 #genres {
-    color: #777373;
+    color: #a8a4a4;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.7em;
+    font-size: 0.65em;
 }
 
 #newestchap { 
     color: var(--font-color);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
+    font-size: 0.85em;
 }
 
 #newestchap:hover {
@@ -449,7 +458,7 @@ input:checked + #labelcheck #ball {
 } 
 
 #title, #genres, #newestchap, .fa-star {
-    padding-left: 4px;
+    padding-left: 0px;
 }
 
 .fa-star {
@@ -475,20 +484,26 @@ input:checked + #labelcheck #ball {
     gap: 15px;
 }
 
-#searchbar-container {
-    width: 200px;
+.searchbar-container {
+    width: 400px;
     height: 50px;
-    border-radius: 200px;
+    border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--background2);
-    border: 2px solid var(--background-searchbutton);
+    background-color: var(--primary-color);
+    border: 1px solid var(--bordersearchbar);
+}
+
+.focusinput {
+    transition: 0.1s;
+    border: 2px solid var(--bordermod2);
+    outline: 4px solid var(--bordermod3);
 }
 
 #ball1 {
     width: 0%;
-    height: 94.5%;
+    height: 93.5%;
     border-radius: 200px;
     display: flex;
     justify-content: center;
@@ -504,15 +519,12 @@ input:checked + #labelcheck #ball {
     border: none;
     background-color: transparent;
     color: var(--font-color);
-}
-
-#search::placeholder {
-    color: var(--font-color);
+    letter-spacing: -20px;
 }
 
 #search:focus + #ball1 {
     transition: width 0.2s linear;
-    width: 40%;
+    width: 20%;
 }
 
 #search:focus + #ball1 .fa-magnifying-glass {
@@ -525,6 +537,72 @@ input:checked + #labelcheck #ball {
 
 .fa-magnifying-glass {
     color: transparent;
+}
+
+#lowerpartcard {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#stars span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    color: #a8a4a4;
+}
+
+#discord-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+    border: 2px solid var(--borderdiscordlogo);
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.fa-discord {
+    color: var(--borderdiscordlogo);
+}
+
+#discord-logo:hover {
+    transition: 0.5s;
+    background-color: #8c9eff;
+    color: white;
+    border: 2px solid transparent;
+}
+
+#discord-logo:hover .fa-discord {
+    transition: 0.5s;
+    color: white;
+}
+
+.discordlogoscaledown {
+    animation: discordlogoscaledown;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.discordlogscaleup {
+    animation: discordlogoscaleup;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes discordlogoscaledown {
+    from {transform: scale(1.1);}
+    to {transform: scale(1);}
+}
+
+@keyframes discordlogoscaleup {
+    from {transform: scale(1);}
+    to {transform: scale(1.1);}
 }
 
 @media (max-width: 960px) { /* when the width is less than 30em, make both of the widths 100% */
