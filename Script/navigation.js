@@ -8,6 +8,7 @@ if (lightmode == "true"){
 }
 
 if (navmenu == "visible"){
+    document.getElementById("menujs").style.transitionDuration = "0s";
     enablenavmenu();
 } else {
     disablenavmenu();
@@ -28,7 +29,6 @@ function enablelightmode(){
     document.getElementById("fa-moon").style.color = "#e8eaec";
     document.getElementById("fa-moon").classList.remove("fa-sun");
     document.getElementById("fa-moon").classList.add("fa-moon");
-    document.getElementById("imgbutton").src = "./img/discord-button-lighttheme.png"
 }
 
 function disablelightmode(){
@@ -38,7 +38,6 @@ function disablelightmode(){
     document.getElementById("fa-moon").style.color = "#1E1F22";
     document.getElementById("fa-moon").classList.remove("fa-moon");
     document.getElementById("fa-moon").classList.add("fa-sun");
-    document.getElementById("imgbutton").setAttribute("src", "/img/discord-button.png")
 }
 
 document.getElementById("check").addEventListener("change", ()=>{
@@ -97,7 +96,6 @@ document.getElementById("search").addEventListener("focusout", ()=>{
 document.getElementById("discord-logo").addEventListener("mouseover", ()=>{
     document.getElementById("discord-logo").classList.add("discordlogscaleup");
     document.getElementById("discord-logo").classList.remove("discordlogoscaledown");
-    document.getElementById("discordanimation").classList.add("discordanimationactive");
 })
 
 document.getElementById("discord-logo").addEventListener("mouseout", ()=>{
@@ -110,6 +108,7 @@ document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
 });
 
 document.getElementById("dropdownmenu").addEventListener("click", ()=>{
+    document.getElementById("menujs").style.transitionDuration = "0.5s";
     document.querySelector(".menu").classList.toggle("show");
     if (localStorage.getItem("nav-bar") == "visible"){
         localStorage.setItem("nav-bar", "nonvisible");
