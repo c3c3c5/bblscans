@@ -79,14 +79,18 @@ document.getElementById("search").addEventListener("focusout", ()=>{
 document.getElementById("discord-logo").addEventListener("mouseover", ()=>{
     document.getElementById("discord-logo").classList.add("discordlogscaleup");
     document.getElementById("discord-logo").classList.remove("discordlogoscaledown");
+    document.getElementById("discordanimation").classList.add("discordanimationactive");
 })
 
 document.getElementById("discord-logo").addEventListener("mouseout", ()=>{
     document.getElementById("discord-logo").classList.remove("discordlogscaleup");
     document.getElementById("discord-logo").classList.add("discordlogoscaledown");
-})
+});
 
-document.getElementById("discord-logo").addEventListener("click", ()=>{
+document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
     window.open("https://discord.gg/cZdxhc2Q");
-})
+});
 
+document.getElementById("dropdownmenu").addEventListener("click", ()=>{
+    document.querySelector(".test").classList.toggle("show");
+})

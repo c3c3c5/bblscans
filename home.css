@@ -24,6 +24,7 @@
 }
 
 :root {
+    --backgroundbuttonswitchhover: rgba(255, 255, 255, 0.808);
     --bordermod3: rgba(255, 255, 255, 0.493);
     --bordermod2: white;
     --searchtext: white;
@@ -51,6 +52,7 @@
 }
 
 .light-theme {
+    --backgroundbuttonswitchhover: rgba(0, 0, 0, 0.808);
     --bordermod3: rgba(68, 64, 64, 0.664);
     --bordermod2: black;
     --searchtext: black;
@@ -130,8 +132,9 @@ footer {
 
 ul {
     list-style-type: none;
-    display: none;
+    display: flex;
     margin-top: 25px;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 30px;
 }
@@ -267,26 +270,6 @@ a:not(#newestchap) {
     font-size: 1.3em;
 }
 
-a:not(#newestchap):after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 3px;
-    background-color: var(--color-undertextmenu);
-    top: 63px;
-    left: 0px;
-}
-
-a:not(#newestchap):hover::after {
-    transition: width 0.3s linear;
-    width: 100%;
-}
-
-.currentpage {
-    padding-bottom: 40px;
-    border-bottom: 3px solid var(--color-undertextmenu);
-}
-
 #container {
     display: flex;
     justify-content: center;
@@ -304,6 +287,7 @@ a:not(#newestchap):hover::after {
 
 #labelcheck:hover {
     cursor: pointer;
+    background-color: var(--backgroundbuttonswitchhover);
 }
 
 #ball {
@@ -479,7 +463,7 @@ a:not(#newestchap):hover::after {
 }
 
 .searchbar-container {
-    width: 400px;
+    width: 600px;
     height: 50px;
     border-radius: 6px;
     display: flex;
@@ -503,6 +487,58 @@ a:not(#newestchap):hover::after {
     justify-content: center;
     align-items: center;
     background-color: transparent;
+}
+
+#dropdownmenu {
+    min-height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundbuttonswitch);
+}
+
+.fa-bars {
+    color: var(--primary-color);
+}
+
+.test {
+    height: 75px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0px;
+}
+
+.show {
+    transition: 0.2s;
+    display: flex;
+}
+
+a {
+    height: 100%;
+    width: 25%;
+    background-color: #242835;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid white;
+}
+
+.rightside {
+    border-right: none;
+}
+
+a:hover {
+    background-color: #8c9eff;
+}
+
+li {
+    border: 2px solid pink;
+    width: 300px;
+    height: 50px;
 }
 
 #search {
