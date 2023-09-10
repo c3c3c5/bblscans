@@ -1,5 +1,6 @@
 let lightmode = localStorage.getItem("light-mode");
 let navmenu = localStorage.getItem("nav-bar");
+let focused = false;
 
 if (lightmode == "true"){
     document.getElementById("ball").style.transitionDuration = "0s";
@@ -118,6 +119,15 @@ document.getElementById("dropdownmenu").addEventListener("click", ()=>{
 })
 
 document.getElementById("searchcontainer").addEventListener("click", ()=>{
+    if (focused == true) {
+        focused = false;
+    } else {
+        focused = true;
+    }
+    if (focused){
+        document.getElementById("searchbarphone").focus();
+    } else {
+        document.getElementById("searchbarphone").blur();
+    }
     document.querySelector(".searchbarphonecontainer").classList.toggle("searchbarphonecontainer-open");
-    document.getElementById("searchbarphone").focus();
 })
