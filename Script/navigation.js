@@ -2,6 +2,7 @@ let lightmode = localStorage.getItem("light-mode");
 let navmenu = localStorage.getItem("nav-bar");
 
 if (lightmode == "true"){
+    document.getElementById("ball").style.transitionDuration = "0s";
     enablelightmode();
 } else {
     disablelightmode();
@@ -41,6 +42,7 @@ function disablelightmode(){
 }
 
 document.getElementById("check").addEventListener("change", ()=>{
+    document.getElementById("ball").style.transitionDuration = "0.3s";
     console.log(this.checked);
     if (localStorage.getItem("light-mode") == "false") {
         enablelightmode();
@@ -82,16 +84,6 @@ document.querySelectorAll("#card-container").forEach((c,i)=>{
         document.querySelectorAll("#card-container")[i].classList.add("downscalecardcontainer");
     })
 })
-
-document.getElementById("discord-logo").addEventListener("mouseover", ()=>{
-    document.getElementById("discord-logo").classList.add("discordlogscaleup");
-    document.getElementById("discord-logo").classList.remove("discordlogoscaledown");
-})
-
-document.getElementById("discord-logo").addEventListener("mouseout", ()=>{
-    document.getElementById("discord-logo").classList.remove("discordlogscaleup");
-    document.getElementById("discord-logo").classList.add("discordlogoscaledown");
-});
 
 document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
     window.open("https://discord.gg/cZdxhc2Q");
