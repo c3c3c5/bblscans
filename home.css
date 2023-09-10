@@ -445,10 +445,12 @@ main {
     border: 1px solid var(--bordersearchbar);
 }
 
-.focusinput {
+.searchbar-container:focus-within {
     transition: 0.1s;
     border: 2px solid var(--bordermod2);
-    outline: 4px solid var(--bordermod3);
+    outline: 3px solid var(--bordermod3);
+    width: 395px;
+    height: 45px;
 }
 
 #ball1 {
@@ -642,6 +644,14 @@ li {
         justify-content: center;
         align-items: center;
         gap: 35px;
+    }
+
+    #rightside {
+        width: 100%;
+    }
+
+    .searchbar-container {
+        flex-grow: 1;
     }
 }
 

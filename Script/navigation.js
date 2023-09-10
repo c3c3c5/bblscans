@@ -83,16 +83,6 @@ document.querySelectorAll("#card-container").forEach((c,i)=>{
     })
 })
 
-document.getElementById("search").addEventListener("focus", ()=>{
-    document.querySelector(".searchbar-container").classList.add("focusinput");
-    console.log("input focused");
-})
-
-document.getElementById("search").addEventListener("focusout", ()=>{
-    document.querySelector(".searchbar-container").classList.remove("focusinput");
-    console.log("notfocused");
-})
-
 document.getElementById("discord-logo").addEventListener("mouseover", ()=>{
     document.getElementById("discord-logo").classList.add("discordlogscaleup");
     document.getElementById("discord-logo").classList.remove("discordlogoscaledown");
