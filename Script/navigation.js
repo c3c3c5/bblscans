@@ -128,6 +128,7 @@ document.getElementById("searchcontainer").addEventListener("click", ()=>{
         document.getElementById("searchbarphone").focus();
     } else {
         document.getElementById("searchbarphone").blur();
+        document.getElementById("searchbarphone").value = "";
     }
     document.querySelector(".searchbarphonecontainer").classList.toggle("searchbarphonecontainer-open");
 })
