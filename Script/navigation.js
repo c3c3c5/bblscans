@@ -30,6 +30,10 @@ function enablelightmode(){
     document.getElementById("fa-moon").style.color = "#e8eaec";
     document.getElementById("fa-moon").classList.remove("fa-sun");
     document.getElementById("fa-moon").classList.add("fa-moon");
+
+    document.getElementById("fa-moonphone").style.color = "#e8eaec";
+    document.getElementById("fa-moonphone").classList.remove("fa-sun");
+    document.getElementById("fa-moonphone").classList.add("fa-moon");
 }
 
 function disablelightmode(){
@@ -39,10 +43,24 @@ function disablelightmode(){
     document.getElementById("fa-moon").style.color = "#1E1F22";
     document.getElementById("fa-moon").classList.remove("fa-moon");
     document.getElementById("fa-moon").classList.add("fa-sun");
+
+    document.getElementById("fa-moonphone").style.color = "#1E1F22";
+    document.getElementById("fa-moonphone").classList.remove("fa-moon");
+    document.getElementById("fa-moonphone").classList.add("fa-sun");
 }
 
 document.getElementById("check").addEventListener("change", ()=>{
     document.getElementById("ball").style.transitionDuration = "0.3s";
+    console.log(this.checked);
+    if (localStorage.getItem("light-mode") == "false") {
+        enablelightmode();
+    } else {
+        disablelightmode();
+    }
+})
+
+document.getElementById("checkphone").addEventListener("change", ()=>{
+    document.getElementById("ballphone").style.transitionDuration = "0.3s";
     console.log(this.checked);
     if (localStorage.getItem("light-mode") == "false") {
         enablelightmode();

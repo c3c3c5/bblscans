@@ -242,13 +242,13 @@ main {
     color: var(--searchtext);
 }
 
-#container {
+#container, #containerphone {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#labelcheck {
+#labelcheck, #labelcheckphone {
     width: 95px;
     height: 50px;
     background-color: var(--primary-color);
@@ -258,11 +258,11 @@ main {
     border: 1px solid var(--bordersearchbar);
 }
 
-#labelcheck:hover {
+#labelcheck:hover, #labelcheckphone:hover {
     cursor: pointer;
 }
 
-#ball {
+#ball, #ballphone {
     height: 40px;
     width: 40px;
     background: var(--colorswitchlightbutton);
@@ -274,11 +274,11 @@ main {
     transition: transform cubic-bezier(0.42, 0, 0.15, 1.28);
 }
 
-#check:checked + #labelcheck #ball {
+#check:checked + #labelcheck #ball, #checkphone:checked + #labelcheckphone #ballphone {
     transform: translateX(44px);
 }
 
-#check {
+#check, #checkphone {
     display: none;
 }
 
@@ -427,6 +427,10 @@ main {
     font-weight: 100;
 }
 
+#phone-header {
+    display: none;
+}
+
 #rightside {
     display: flex;
     justify-content: center;
@@ -463,7 +467,7 @@ main {
     background-color: transparent;
 }
 
-#dropdownmenu {
+#dropdownmenu, #dropdownmenuphone {
     min-height: 50px;
     width: 50px;
     cursor: pointer;
@@ -539,7 +543,7 @@ li {
 
 #search:focus + #ball1 {
     transition: width 0.3s ease-in-out;
-    width: 10%;
+    width: 15%;
 }
 
 #search:focus + #ball1 .fa-magnifying-glass {
@@ -656,17 +660,35 @@ li {
 }
 
 @media (max-width: 565px) {
-    .currentpage {
-        padding-bottom: 40px;
-        border-bottom: 3px solid transparent;
+    #desktop-header {
+        display: none;
     }
 
-    ul {
-        font-size: 0.9rem;
+    #phone-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
     }
 
-    #joindiscordbutton {
-        width: 100px;
+    #search:focus + #ball1 {
+        transition: width 0.3s ease-in-out;
+        width: 40%;
+    }
+
+    .fa-magnifying-glass {
+        color: var(--font-color);
+    }
+
+    #searchcontainer {
+        display: flex;
+        width: 50px;
         height: 50px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color);
+        border: 1px solid var(--bordersearchbar);
+        border-radius: 6px;
+        cursor: pointer;
     }
 }
