@@ -124,7 +124,6 @@ header {
 }
 
 footer {
-    border-top: 2px solid var(--font-color);
     position: sticky;
     display: flex;
     justify-content: center;
@@ -494,7 +493,7 @@ a:not(#newestchap) {
 .menu {
     display: grid;
     grid-template-rows: 0px;
-    transition: grid-template-rows 0.5s;
+    transition: grid-template-rows 0.5s;  
     gap: 0px;
 }
 
@@ -507,7 +506,7 @@ a:not(#newestchap) {
     align-items: center;
 }
 
-.show {
+.show {   
     grid-template-rows: 75px;
 }
 
@@ -548,8 +547,8 @@ li {
 }
 
 #search:focus + #ball1 {
-    transition: width 0.2s linear;
-    width: 20%;
+    transition: width 0.2s ease-in-out;
+    width: 10%;
 }
 
 #search:focus + #ball1 .fa-magnifying-glass {
@@ -618,6 +617,10 @@ li {
     animation: discordlogoscaleup;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
+}
+
+.currentpage {
+    background-color: var(--hovermenubackground);
 }
 
 @keyframes discordlogoscaledown {

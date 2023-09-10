@@ -1,9 +1,24 @@
 let lightmode = localStorage.getItem("light-mode");
+let navmenu = localStorage.getItem("nav-bar");
 
 if (lightmode == "true"){
     enablelightmode();
 } else {
     disablelightmode();
+}
+
+if (navmenu == "visible"){
+    enablenavmenu();
+} else {
+    disablenavmenu();
+}
+
+function enablenavmenu(){
+    document.querySelector(".menu").classList.add("show");
+}
+
+function disablenavmenu(){
+    document.querySelector(".menu").classList.remove("show");
 }
 
 function enablelightmode(){
@@ -42,6 +57,9 @@ document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
 document.addEventListener("DOMContentLoaded", ()=>{
     if (document.querySelector(".titre").textContent == "Home"){
         document.querySelectorAll(".menu-link")[0].classList.add("currentpage");
+    }
+    if (document.querySelector(".titre").textContent == "Suggestions"){
+        document.querySelectorAll(".menu-link")[3].classList.add("currentpage");
     }
 })
 
@@ -93,4 +111,9 @@ document.getElementById("joindiscordbutton").addEventListener("click", ()=>{
 
 document.getElementById("dropdownmenu").addEventListener("click", ()=>{
     document.querySelector(".menu").classList.toggle("show");
+    if (localStorage.getItem("nav-bar") == "visible"){
+        localStorage.setItem("nav-bar", "nonvisible");
+    } else {
+        localStorage.setItem("nav-bar", "visible");
+    }
 })
