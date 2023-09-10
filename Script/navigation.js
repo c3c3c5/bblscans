@@ -116,3 +116,8 @@ document.getElementById("dropdownmenu").addEventListener("click", ()=>{
         localStorage.setItem("nav-bar", "visible");
     }
 })
+
+document.getElementById("searchcontainer").addEventListener("click", ()=>{
+    document.querySelector(".searchbarphonecontainer").classList.toggle("searchbarphonecontainer-open");
+    document.getElementById("searchbarphone").focus();
+})
