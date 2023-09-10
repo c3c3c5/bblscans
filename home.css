@@ -691,4 +691,8 @@ li {
         border-radius: 6px;
         cursor: pointer;
     }
+
+    #menujs {
+        display: none;
+    }
 }
