@@ -331,10 +331,6 @@ main {
     display: none;
 }
 
-.dropdownfake {
-    display: none;
-}
-
 @keyframes scaleupcardcontainer {
     to {transform: scale(1.02);}
 }
@@ -685,9 +681,10 @@ li {
     #phone-header {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         flex-wrap: nowrap;
-        height: 10px;
+        max-height: 10px;
+        padding: 5px;
     }
 
     #search:focus + #ball1 {
@@ -766,21 +763,6 @@ li {
         z-index: 1;
     }
 
-    .dropdownfake {
-        min-height: 40px;
-        width: 40px;
-        cursor: pointer;
-        border-radius: 6px;
-        display: flex;
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--primary-color);
-        border: 1px solid var(--bordersearchbar);
-        z-index: 0;
-        transition: left 0.3s ease-in-out;
-    }
-
     #labelcheckphone {
         width: 76px;
         height: 40px;
@@ -814,14 +796,24 @@ li {
     }
 
     .phonemenu {
-        transition: left 0.5s ease-in-out;
-        position: fixed;
-        top: 74px;
-        left: -334px;
         display: grid;
-        grid-template-columns: 0fr;
+        grid-template-rows: 0px;
+        position: absolute;
+        top: 44px;
+        background-color: var(--primarycoloropacity);
+        left: 0px;
         padding-left: 0px;
         z-index: 1;
+        transition: grid-template-rows 0.5s ease-in-out;
+    }
+
+    .phonemenushow {
+        grid-template-rows: 270px;
+    }
+
+    .fixedphonemenu {
+        position: fixed;
+        top: -16px;
     }
 
     #menutext {
@@ -836,6 +828,7 @@ li {
     }
 
     .inner {
+        overflow: hidden;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
@@ -843,18 +836,16 @@ li {
         gap: 30px;
         font-family: "arial";
         color: white;
-        background-color: var(--primarycoloropacity);
         opacity: 1;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     #toppart {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-bottom: 2px solid pink;
     }
 
     #toppart h1 {
@@ -865,5 +856,26 @@ li {
 
     .fa-xmark {
         color: var(--font-color);
+    }
+
+    #leftsidephone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-left: 10px;
+    }
+
+    #rightsidephone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-right: 10px;
+    }
+
+    #closemenubutton {
+        background-color: transparent;
+        border: none;
     }
 }
