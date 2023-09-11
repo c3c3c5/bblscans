@@ -147,7 +147,7 @@ document.querySelector("#closemenubutton").addEventListener("click", ()=>{
 let menupos = document.querySelector(".phonemenu").getBoundingClientRect();
 
 window.addEventListener("scroll", ()=>{
-    if (window.scrollY > menupos.top) {
+    if (window.scrollY > 65) {
         document.querySelector(".phonemenu").classList.add("fixedphonemenu");
     } else {
         document.querySelector(".phonemenu").classList.remove("fixedphonemenu");
