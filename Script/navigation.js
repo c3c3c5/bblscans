@@ -1,6 +1,33 @@
 let lightmode = localStorage.getItem("light-mode");
 let navmenu = localStorage.getItem("nav-bar");
 let focused = false;
+let positionrealdropdown = document.getElementById("dropdownmenuphone").getBoundingClientRect();
+document.querySelector(".dropdownfake").style.top = `${positionrealdropdown.top}px`;
+document.querySelector(".dropdownfake").style.left = `${positionrealdropdown.left}px`;
+
+window.addEventListener("resize", ()=>{
+    positionrealdropdown = document.getElementById("dropdownmenuphone").getBoundingClientRect();
+    document.querySelector(".dropdownfake").style.top = `${positionrealdropdown.top}px`;
+    document.querySelector(".dropdownfake").style.left = `${positionrealdropdown.left}px`;
+    document.querySelector(".phonemenu").style.left = "0px";
+})
+
+document.querySelector(".dropdownfake").addEventListener("click", ()=>{
+    console.log("works?");
+    document.querySelector(".dropdownfake").style.transitionDuration = "0.5s";
+    document.querySelector(".dropdownfake").style.left = `${positionrealdropdown.left - positionrealdropdown.left - 50}px`;
+    document.querySelector(".phonemenu").style.left = `0px`;
+    document.getElementById("dropdownmenuphone").style.visibility = "hidden";
+    console.log("buttonworks")
+})
+
+document.querySelector(".fa-xmark").addEventListener("click", ()=>{
+    document.querySelector(".dropdownfake").style.left = `${positionrealdropdown.left}px`;
+    document.querySelector(".phonemenu").style.left = `-334px`;
+    setTimeout(()=>{
+        document.getElementById("dropdownmenuphone").style.visibility = "visible";
+    }, 500)
+})
 
 if (lightmode == "true"){
     document.getElementById("ball").style.transitionDuration = "0s";
