@@ -105,6 +105,14 @@
     --hovermenubackground: #e8eaec00;
 }
 
+#lowerpartcard span {
+    text-align: start;
+}
+
+#stars {
+    text-align: start;
+}
+
 body {
     margin: 0px;
     position: relative;
@@ -424,7 +432,7 @@ main {
 } 
 
 #title, #genres, #newestchap, .fa-star {
-    padding-left: 0px;
+    padding-left: -15px;
 }
 
 .fa-star {
@@ -572,6 +580,7 @@ li {
     padding-top: 5px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 5px;
 }
 
