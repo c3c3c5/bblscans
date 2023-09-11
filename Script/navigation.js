@@ -147,6 +147,11 @@ document.querySelector("#closemenubutton").addEventListener("click", ()=>{
 let menupos = document.querySelector(".phonemenu").getBoundingClientRect();
 
 window.addEventListener("scroll", ()=>{
+    if (window.scrollY > document.documentElement.scrollHeight - window.innerHeight - 122) {
+        document.querySelector(".discord-logo").classList.add("discord-logoscrolled");
+    } else {
+        document.querySelector(".discord-logo").classList.remove("discord-logoscrolled");
+    }
     if (window.scrollY > 65) {
         document.querySelector(".phonemenu").classList.add("fixedphonemenu");
     } else {

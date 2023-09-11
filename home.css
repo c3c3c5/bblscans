@@ -46,6 +46,7 @@
     --starscolor: gold;
     --secondaryfontcolor: #dadada;
     --body-background-color: #2B2D31;
+    --body-background-colortrans: #2b2d3183;
     --background-searchbutton: white;
     --background2: black;
     --borderdiscordlogo: white;
@@ -79,6 +80,7 @@
     --starscolor: rgb(238, 204, 13);
     --secondaryfontcolor: black;
     --body-background-color: #cacccea8;
+    --body-background-colortrans: #caccce79;
     --background-searchbutton: black;
     --background2: white;
     --borderdiscordlogo: #202124;
@@ -135,6 +137,7 @@ footer {
     background: transparent;
     top: 100%;
     backdrop-filter: blur(10px);
+    border-top: 2px solid var(--font-color);
 }
 
 ul {
@@ -577,7 +580,7 @@ li {
     color: #a8a4a4;
 }
 
-#discord-logo {
+.discord-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -592,18 +595,23 @@ li {
     background-color: transparent;
 }
 
+.discord-logoscrolled {
+    position: absolute;
+    bottom: 147px;
+}
+
 .fa-discord {
     color: var(--borderdiscordlogo);
 }
 
-#discord-logo:hover {
+.discord-logo:hover {
     transition: 0.5s;
     background-color: #8c9eff;
     color: white;
     border: 2px solid transparent;
 }
 
-#discord-logo:hover .fa-discord {
+.discord-logo:hover .fa-discord {
     transition: 0.5s;
     color: white;
 }
@@ -653,6 +661,20 @@ li {
 
 #searchbarphonecontainer {
     display: none;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--font-color);
+    border-radius: 24px;
+}
+
+::-webkit-scrollbar {
+    width: 0.3em;
+    border-radius: 50%;
 }
 
 @media (max-width: 960px) { /* when the width is less than 30em, make both of the widths 100% */
@@ -797,10 +819,10 @@ li {
 
     .phonemenu {
         display: grid;
-        grid-template-rows: 0px;
+        grid-template-rows: 0vh;
         position: absolute;
         top: 44px;
-        background-color: var(--primarycoloropacity);
+        background-color: var(--primary-color);
         left: 0px;
         padding-left: 0px;
         z-index: 1;
@@ -808,7 +830,7 @@ li {
     }
 
     .phonemenushow {
-        grid-template-rows: 270px;
+        grid-template-rows: 80vh;
     }
 
     .fixedphonemenu {
