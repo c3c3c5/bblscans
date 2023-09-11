@@ -925,4 +925,10 @@ li {
     .discord-logo {
         display: none;
     }
+
+    #card-container {
+        height: 337.5px;
+        width: 172.5px;
+        border-radius: 6px;
+    }
 }
