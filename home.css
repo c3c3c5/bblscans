@@ -30,17 +30,14 @@
 
 #left-page {
     flex: 1;
-    border: 2px solid green;
 }
 
 #right-page {
     flex: 1;
-    border: 2px solid red;
 }
 
 #center-page {
     flex: 2;
-    border: 2px solid white;
 }
 
 :root {
