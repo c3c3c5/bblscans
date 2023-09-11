@@ -23,6 +23,26 @@
     src: url(./fonts/arial/arial.ttf);
 }
 
+#main-content {
+    display: flex;
+    flex-basis: auto;
+}
+
+#left-page {
+    flex: 1;
+    border: 2px solid green;
+}
+
+#right-page {
+    flex: 1;
+    border: 2px solid red;
+}
+
+#center-page {
+    flex: 2;
+    border: 2px solid white;
+}
+
 :root {
     --backgroundbuttonswitchhover: rgba(255, 255, 255, 0.808);
     --bordermod3: rgba(255, 255, 255, 0.493);
@@ -287,27 +307,11 @@ main {
     display: none;
 }
 
-#all-releases {
-    text-align: start;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 70%;
-    min-height: 620px;
-    color: var(--font-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
 #all-releases-container {
-    min-height: 530px;
     display: flex;
     gap: 20px;
     flex-direction: row;
     flex-wrap: wrap;
-    border-radius: 12px;
     justify-content: center;
     align-items: center;
 }
@@ -430,7 +434,7 @@ main {
     color: var(--starscolor);
 }
 
-#allreleasestext {
+.allreleasestext {
     color: var(--secondaryfontcolor);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
@@ -899,5 +903,26 @@ li {
     #closemenubutton {
         background-color: transparent;
         border: none;
+    }
+
+    #main-content {
+        flex-direction: column;
+    }
+
+    #center-page {
+        order: 1;
+    }
+
+    #left-page {
+        order: 2;
+        height: 300px;
+    }
+
+    #right-page {
+        order: 3;
+    }
+
+    .discord-logo {
+        display: none;
     }
 }
