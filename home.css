@@ -720,8 +720,8 @@ li {
 
     #searchcontainer {
         display: flex;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         justify-content: center;
         align-items: center;
         background-color: var(--primary-color);
@@ -742,7 +742,7 @@ li {
         border: 1px solid var(--bordersearchbar);
         color: var(--font-color);
         padding-left: 10px;
-        height: 40px;
+        height: 30px;
         width: 298px;
         overflow: hidden;
     }
@@ -760,7 +760,7 @@ li {
     }
 
     .searchbarphonecontainer-open {
-        grid-template-rows: 60px;
+        grid-template-rows: 50px;
     }
 
     .insidehere {
@@ -773,8 +773,8 @@ li {
     }
 
     #dropdownmenuphone {
-        min-height: 40px;
-        width: 40px;
+        min-height: 30px;
+        width: 30px;
         cursor: pointer;
         border-radius: 6px;
         display: flex;
@@ -786,8 +786,8 @@ li {
     }
 
     #labelcheckphone {
-        width: 76px;
-        height: 40px;
+        width: 57px;
+        height: 30px;
         background-color: var(--primary-color);
         border-radius: 6px;
         display: flex;
@@ -796,8 +796,8 @@ li {
     }
 
     #ballphone {
-        height: 30px;
-        width: 30px;
+        height: 20px;
+        width: 20px;
         background: var(--colorswitchlightbutton);
         border-radius: 6px;
         margin-left: 5px;
@@ -808,12 +808,12 @@ li {
     }
 
     #checkphone:checked + #labelcheckphone #ballphone {
-        transform: translateX(36px);
+        transform: translateX(28px);
     }
 
     #logo {
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
         border: 2px solid var(--logo-border-radius-color);
     }
 
