@@ -255,6 +255,10 @@ main {
     text-align: center;
 }
 
+#slideshow-page {
+    display: none;
+}
+
 #search-bar {
     background: var(--primary-color);
     background: var(--primary-color-gradient);
@@ -550,12 +554,6 @@ main {
     background-color: var(--hovermenubackground);
 }
 
-li {
-    border: 2px solid pink;
-    width: 300px;
-    height: 50px;
-}
-
 #search {
     width: 100%;
     height: 90%;
@@ -836,7 +834,7 @@ li {
 
     .phonemenu {
         display: grid;
-        grid-template-rows: 0vh;
+        grid-template-rows: 0px;
         position: absolute;
         top: 44px;
         background-color: var(--primarycoloropacity);
@@ -847,7 +845,7 @@ li {
     }
 
     .phonemenushow {
-        grid-template-rows: 33vh;
+        grid-template-rows: 400px;
     }
 
     .fixedphonemenu {
@@ -942,10 +940,6 @@ li {
         border-radius: 6px;
     }
 
-    #slideshow-page {
-        display: none;
-    }
-
     .menu-element {
         position: relative;
         left: -300px;
@@ -988,5 +982,60 @@ li {
 
     #phone-header {
         z-index: 2;
+    }
+
+    #slideshow-page {
+        margin-top: 0px;
+        display: flex;
+        min-height: 300px;
+        overflow: hidden;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #image-slider {
+        top: 0px;
+        position: absolute;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0px;
+        width: 100%;
+        flex-wrap: nowrap;
+        right: 0vw;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        z-index: 0;
+        transition: right 0.3s ease-in-out;
+    }
+
+    #image-slider img {
+        height: 300px;
+        width: 100vw;
+    }
+
+    
+    #slideshowswitchers {
+        z-index: 1;
+        position: absolute;
+        top: 90%;
+    }
+
+    .buttonswitcher {
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+        border: none;
+        background-color: var(--primary-color);
+        margin: 3px;
+    }
+
+    .selectedbutton {
+        transition: width 0.1s ease-in;
+        background: var(--font-color);
+        width: 15px;
+        border-radius: 10px;
     }
 }

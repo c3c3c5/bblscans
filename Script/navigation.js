@@ -1,6 +1,7 @@
 let lightmode = localStorage.getItem("light-mode");
 let navmenu = localStorage.getItem("nav-bar");
 let focused = false;
+let currentimage = 0;
 
 if (lightmode == "true"){
     document.getElementById("ball").style.transitionDuration = "0s";
@@ -165,3 +166,32 @@ window.addEventListener("scroll", ()=>{
         document.querySelector(".phonemenu").classList.remove("fixedphonemenu");
     }
 })
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    setInterval(nextimg, 3000);
+})
+
+document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
+    b.addEventListener("click", ()=>{
+        selectimg(i);
+    })
+})
+
+function nextimg() {
+    if (currentimage == 4) {
+        currentimage = 0;
+        document.getElementById("image-slider").style.right = `${currentimage * 100}vw`;
+    } else {
+        currentimage++;
+        document.getElementById("image-slider").style.right = `${currentimage * 100}vw`;
+    }
+    document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+    document.querySelectorAll(".buttonswitcher")[currentimage].classList.add("selectedbutton");
+}
+
+function selectimg(index) {
+    currentimage = index;
+    document.getElementById("image-slider").style.right = `${currentimage * 100}vw`;
+    document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+    document.querySelectorAll(".buttonswitcher")[currentimage].classList.add("selectedbutton");
+}
