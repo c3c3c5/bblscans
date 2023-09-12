@@ -211,6 +211,7 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
         currentimage = 5;
+        nextimg();
     }
 })
 
