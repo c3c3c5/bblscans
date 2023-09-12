@@ -168,26 +168,23 @@ window.addEventListener("scroll", ()=>{
 })
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    /*setInterval(nextimg, 3000);*/
+    setInterval(nextimg, 3000);
 })
 
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
     b.addEventListener("click", ()=>{
         currentimage = i;
         let width = window.innerWidth;
-        console.log(width);
         document.getElementById("slideshow-page").scrollTo({
             left: width * i,
             behavior: "smooth",
         });
-        //selectimg(i);
     })
 })
 
 document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     let scrolled = document.getElementById("slideshow-page").scrollLeft;
     let width = window.innerWidth;
-    console.log(scrolled);
     if (scrolled >= 0 && scrolled < width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
@@ -208,20 +205,29 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
         currentimage = 4;
-    } 
-    console.log
+    } else if (scrolled >= width + width + width + width + width/2 && scrolled < width + width + width + width + width + width/2) {
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
+        currentimage = 5;
+    }
 })
 
 function nextimg() {
-    if (currentimage == 4) {
+    let width = window.innerWidth;
+    if (currentimage == 5) {
         currentimage = 0;
-        document.getElementById("image-slider").style.right = `${currentimage * 100}vw`;
+        document.getElementById("slideshow-page").scrollTo({
+            left: width * currentimage,
+            behavior: "instant",
+        });
+        nextimg();
     } else {
         currentimage++;
-        document.getElementById("image-slider").style.right = `${currentimage * 100}vw`;
+        document.getElementById("slideshow-page").scrollTo({
+            left: width * currentimage,
+            behavior: "smooth",
+        });
     }
-    document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-    document.querySelectorAll(".buttonswitcher")[currentimage].classList.add("selectedbutton");
 }
 
 function selectimg(index) {

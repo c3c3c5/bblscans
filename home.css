@@ -1023,15 +1023,12 @@ main {
     
     #slideshowswitchers {
         z-index: 1;
-        position: absolute;
-        top: 7.8%;
-        left: 40%;
     }
 
     .buttonswitcher {
-        border-radius: 50%;
-        height: 15px;
-        width: 15px;
+        border-radius: 12px;
+        height: 12px;
+        width: 12px;
         border: none;
         background-color: var(--primary-color);
         margin: 3px;
