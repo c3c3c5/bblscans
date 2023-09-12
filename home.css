@@ -954,7 +954,7 @@ li {
         opacity: 0;
         visibility: hidden;
         color: var(--font-color);
-        transition: 0.5s ease-in-out;
+        transition: 0.2s ease-in-out;
         transition-delay: calc(0.1s * var(--i));
     }
 
