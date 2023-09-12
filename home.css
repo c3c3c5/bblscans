@@ -847,7 +847,7 @@ li {
     }
 
     .phonemenushow {
-        grid-template-rows: 28vh;
+        grid-template-rows: 33vh;
     }
 
     .fixedphonemenu {
@@ -953,6 +953,7 @@ li {
         padding-right: 20px;
         opacity: 0;
         visibility: hidden;
+        color: black;
         transition: 0.5s ease-in-out;
         transition-delay: calc(0.1s * var(--i));
     }
