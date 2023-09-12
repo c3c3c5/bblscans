@@ -200,7 +200,7 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[2].classList.add("selectedbutton");
         currentimage = 2;
-    } else if (scrolled >= width + width + width/2 && scrolled < width + width + width){
+    } else if (scrolled >= width + width + width/2 && scrolled < width + width + width + width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[3].classList.add("selectedbutton");
         currentimage = 3;
