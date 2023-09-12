@@ -175,6 +175,7 @@ document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
     b.addEventListener("click", ()=>{
         currentimage = i;
         let width = window.innerWidth;
+        console.log(width);
         document.getElementById("slideshow-page").scrollTo({
             left: width * i,
             behavior: "smooth",
@@ -185,24 +186,25 @@ document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
 
 document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     let scrolled = document.getElementById("slideshow-page").scrollLeft;
+    let width = window.innerWidth;
     console.log(scrolled);
-    if (scrolled >= 0 && scrolled < 250){
+    if (scrolled >= 0 && scrolled < width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
         currentimage = 0;
-    } else if (scrolled >= 250 && scrolled < 750) {
+    } else if (scrolled >= width/2 && scrolled < width + width/2) {
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[1].classList.add("selectedbutton");
         currentimage = 1;
-    } else if (scrolled >= 750 && scrolled < 1250){
+    } else if (scrolled >= width + width/2 && scrolled < width + width + width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[2].classList.add("selectedbutton");
         currentimage = 2;
-    } else if (scrolled >= 1250 && scrolled < 1750){
+    } else if (scrolled >= width + width + width/2 && scrolled < width + width + width){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[3].classList.add("selectedbutton");
         currentimage = 3;
-    } else if (scrolled >= 1750 && scrolled < 2250){
+    } else if (scrolled >= width + width + width + width/2 && scrolled < width + width + width + width + width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
         currentimage = 4;
