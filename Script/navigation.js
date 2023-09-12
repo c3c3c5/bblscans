@@ -224,13 +224,15 @@ function nextimg() {
             behavior: "smooth",
         });
         setTimeout(()=>{
-            currentimage = 0;
-            document.getElementById("slideshow-page").scrollTo({
+            nextimg();
+            intervalId = setInterval(nextimg,3000);
+        }, 335);
+    } else if (currentimage == 5) {
+        currentimage = 0;
+        document.getElementById("slideshow-page").scrollTo({
             left: width * currentimage,
             behavior: "instant",
         });
-            intervalId = setInterval(nextimg,3000);
-        }, 335);
     } else {
         currentimage++;
         document.getElementById("slideshow-page").scrollTo({
@@ -248,6 +250,13 @@ function selectimg(index) {
 }
 
 document.getElementById("slideshow-page").addEventListener("touchstart", ()=>{
+    if (currentimage == 5) {
+        currentimage = 0;
+        document.getElementById("slideshow-page").scrollTo({
+            left: width * currentimage,
+            behavior: "instant",
+        });
+    }
     clearInterval(intervalId);
 })
 
