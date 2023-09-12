@@ -135,12 +135,19 @@ document.getElementById("searchcontainer").addEventListener("click", ()=>{
 
 document.getElementById("dropdownmenuphone").addEventListener("click", ()=>{
     document.querySelector(".phonemenu").classList.toggle("phonemenushow");
+    document.querySelector(".opacity").classList.toggle("menuopen");
     document.querySelector("#closemenubutton").disabled = false;
-    console.log("clicked")
+})
+
+document.getElementById("dropdownmenuphone").addEventListener("click", ()=>{
+    document.querySelector(".inner").classList.toggle("active");
+    document.querySelector("#closemenubutton").disabled = false;
 })
 
 document.querySelector("#closemenubutton").addEventListener("click", ()=>{
     document.querySelector(".phonemenu").classList.toggle("phonemenushow");
+    document.querySelector(".inner").classList.toggle("active");
+    document.querySelector(".opacity").classList.toggle("menuopen");
     document.querySelector("#closemenubutton").disabled = true;
 })
 
