@@ -1024,7 +1024,8 @@ main {
     #slideshowswitchers {
         z-index: 1;
         position: absolute;
-        top: 90%;
+        top: 7.8%;
+        left: 40%;
     }
 
     .buttonswitcher {
@@ -1045,7 +1046,7 @@ main {
     }
 
     ::-webkit-scrollbar {
-        display: none;
+       display: none;
     }
 
     .allreleasestext {

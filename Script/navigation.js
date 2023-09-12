@@ -173,7 +173,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
     b.addEventListener("click", ()=>{
-        selectimg(i);
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[i].classList.add("selectedbutton");
+        document.getElementById("slideshow-page").scrollTo({
+            left: 500 * i,
+            behavior: "smooth",
+        });
+        //selectimg(i);
     })
 })
 
