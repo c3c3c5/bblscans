@@ -174,8 +174,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
     b.addEventListener("click", ()=>{
         currentimage = i;
+        let width = window.innerWidth;
         document.getElementById("slideshow-page").scrollTo({
-            left: 500 * i,
+            left: width * i,
             behavior: "smooth",
         });
         //selectimg(i);
