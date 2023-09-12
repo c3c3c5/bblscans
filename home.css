@@ -1046,7 +1046,7 @@ main {
     }
 
     ::-webkit-scrollbar {
-        
+        display: none;
     }
 
     .allreleasestext {
