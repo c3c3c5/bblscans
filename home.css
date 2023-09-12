@@ -963,9 +963,6 @@ main {
     }
 
     .opacity {
-        z-index: 1;
-        height: 100%;
-        width: 100%;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
         background-color: rgba(0, 0, 0, 0.5);
@@ -973,6 +970,9 @@ main {
     }
 
     .menuopen {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
         opacity: 1;
     }
 
