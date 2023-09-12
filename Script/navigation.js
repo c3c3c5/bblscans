@@ -211,19 +211,26 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
         currentimage = 5;
-        nextimg();
     }
 })
 
 function nextimg() {
     let width = window.innerWidth;
-    if (currentimage == 5) {
-        currentimage = 0;
+    if (currentimage == 4) {
+        clearInterval(intervalId);
+        currentimage = 5;
         document.getElementById("slideshow-page").scrollTo({
+            left: width * currentimage,
+            behavior: "smooth",
+        });
+        setTimeout(()=>{
+            currentimage = 0;
+            document.getElementById("slideshow-page").scrollTo({
             left: width * currentimage,
             behavior: "instant",
         });
-        nextimg();
+            intervalId = setInterval(nextimg,3000);
+        }, 335);
     } else {
         currentimage++;
         document.getElementById("slideshow-page").scrollTo({
