@@ -915,6 +915,7 @@ main {
 
     #main-content {
         flex-direction: column;
+        gap: 10px;
     }
 
     #center-page {
@@ -1038,5 +1039,9 @@ main {
         background: var(--font-color);
         width: 20px;
         border-radius: 10px;
+    }
+
+    .allreleasestext {
+        font-size: 1.4em;
     }
 }
