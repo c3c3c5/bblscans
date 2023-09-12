@@ -989,10 +989,12 @@ main {
         margin-top: 0px;
         display: flex;
         min-height: 300px;
+        overflow-y: hidden;
         overflow-x: scroll;
         position: relative;
         justify-content: center;
         align-items: center;
+        scroll-snap-type: x mandatory;
     }
 
     #image-slider {
@@ -1013,6 +1015,7 @@ main {
     }
 
     #image-slider img {
+        scroll-snap-align: start;
         height: 300px;
         width: 100vw;
     }
@@ -1039,6 +1042,10 @@ main {
         background: var(--font-color);
         width: 20px;
         border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
     }
 
     .allreleasestext {
