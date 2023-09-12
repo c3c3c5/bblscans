@@ -168,7 +168,7 @@ window.addEventListener("scroll", ()=>{
 })
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    setInterval(nextimg, 3000);
+    /*setInterval(nextimg, 3000);*/
 })
 
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
