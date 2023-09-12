@@ -174,16 +174,39 @@ document.addEventListener("DOMContentLoaded", ()=>{
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
     b.addEventListener("click", ()=>{
         currentimage = i;
-        console.log(currentimage);
-        let unit = document.documentElement.scrollHeight / 100;
-        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-        document.querySelectorAll(".buttonswitcher")[i].classList.add("selectedbutton");
         document.getElementById("slideshow-page").scrollTo({
-            left: 13 * i * unit,
+            left: 500 * i,
             behavior: "smooth",
         });
         //selectimg(i);
     })
+})
+
+document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
+    let scrolled = document.getElementById("slideshow-page").scrollLeft;
+    console.log(scrolled);
+    if (scrolled >= 0 && scrolled < 250){
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
+        currentimage = 0;
+    } else if (scrolled >= 250 && scrolled < 750) {
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[1].classList.add("selectedbutton");
+        currentimage = 1;
+    } else if (scrolled >= 750 && scrolled < 1250){
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[2].classList.add("selectedbutton");
+        currentimage = 2;
+    } else if (scrolled >= 1250 && scrolled < 1750){
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[3].classList.add("selectedbutton");
+        currentimage = 3;
+    } else if (scrolled >= 1750 && scrolled < 2250){
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
+        currentimage = 4;
+    } 
+    console.log
 })
 
 function nextimg() {
