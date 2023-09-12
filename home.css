@@ -845,7 +845,7 @@ main {
     }
 
     .phonemenushow {
-        grid-template-rows: 400px;
+        grid-template-rows: 270px;
     }
 
     .fixedphonemenu {
