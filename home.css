@@ -1082,7 +1082,6 @@ main {
     .textcontainerslideshow p {
         font-family: "yadayada";
         text-align: start;
-        padding-left: 15px;
         color: var(--font-color);
     }
 
@@ -1104,12 +1103,9 @@ main {
         left: 15px;
     }
 
-    .textcontainetitletypeslideshow span {
-        padding-left: 15px;
-    }
-
     .textcontainerslideshow {
         font-size: 0.9em;
+        padding-left: 15px;
     }
 
     .toppartslideshow{
@@ -1144,6 +1140,11 @@ main {
     }
 
     .slideshowelement img {
-        max-width: 200px;
+        max-width: 30vw;
+        max-height: 40vh;
+        margin-right: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px var(--primary-color);
     }
 }
