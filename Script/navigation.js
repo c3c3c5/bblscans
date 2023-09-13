@@ -217,10 +217,12 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
         console.log("final");
         currentimage = 0;
         clearInterval(intervalId);
-        document.getElementById("slideshow-page").scrollTo({
-            left: 0,
-            behavior: "instant",
-        });
+        setTimeout(()=>{
+            document.getElementById("slideshow-page").scrollTo({
+                left: 0,
+                behavior: "instant",
+            });
+        }, 100)
         intervalId = setInterval(nextimg,3000);
     }
 })
