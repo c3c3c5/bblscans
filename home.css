@@ -23,6 +23,21 @@
     src: url(./fonts/arial/arial.ttf);
 }
 
+@font-face {
+    font-family: "yadayada";
+    src: url(/fonts/CCYadaYadaYada.ttf);
+}
+
+@font-face {
+    font-family: "melody";
+    src: url(/fonts/BrightestMelody.ttf);
+}
+
+@font-face {
+    font-family: "arenzi";
+    src: url(/fonts/arenzi.ttf);
+}
+
 #main-content {
     display: flex;
     flex-basis: auto;
@@ -1014,12 +1029,11 @@ main {
         transition: right 0.3s ease-in-out;
     }
 
-    #image-slider img {
+    .slideshowelement {
         scroll-snap-align: start;
         height: 300px;
-        width: 100vw;
+        min-width: 100vw;
     }
-
     
     #slideshowswitchers {
         z-index: 1;
@@ -1063,5 +1077,73 @@ main {
         font-size: 1.5em;
         padding-top: 2px;
         border-radius: 6px;
+    }
+
+    .textcontainerslideshow p {
+        font-family: "yadayada";
+        text-align: start;
+        padding-left: 15px;
+        color: var(--font-color);
+    }
+
+    .textcontainerslideshow {
+        padding-right: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: relative;
+    }
+
+    .toppartslideshow {
+        text-align: start;
+    }
+
+    .textcontainerslideshow .fa-star {
+        float: left;        
+        margin-top: 25px;
+        position: absolute;
+        left: 15px;
+    }
+
+    .textcontainetitletypeslideshow span {
+        padding-left: 15px;
+    }
+
+    .textcontainerslideshow {
+        font-size: 0.9em;
+    }
+
+    .toppartslideshow{
+        display: flex;
+        justify-content: center;
+        margin-left: 15px;
+        margin-top: 8px;
+        color: var(--font-color);  
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .slideshowelement {
+        display: flex;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4.9px);
+        -webkit-backdrop-filter: blur(4.9px);
+    }
+
+    .title-slideshow {
+        font-family: "melody";
+    }
+
+    .summaryslideshow, .authorslideshow, .statusslideshow{
+        font-size: 0.8em;
+    }
+
+    .type-slideshow {
+        font-family: "arenzi";
+        color: gold;
+    }
+
+    .slideshowelement img {
+        max-width: 200px;
     }
 }
