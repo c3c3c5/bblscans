@@ -243,10 +243,18 @@ function selectimg(index) {
     document.querySelectorAll(".buttonswitcher")[currentimage].classList.add("selectedbutton");
 }
 
+let processingalready = false;
+
 document.getElementById("slideshow-page").addEventListener("touchstart", ()=>{
-    clearInterval(intervalId);
+    if (!processingalready) {
+        processingalready = true;
+        clearInterval(intervalId);
+    }
 })
 
 document.getElementById("slideshow-page").addEventListener("touchend", ()=>{
-    intervalId = setInterval(nextimg,3000);
+    if (processingalready) {
+        intervalId = setInterval(nextimg,3000);
+        processingalready = false;
+    }
 })
