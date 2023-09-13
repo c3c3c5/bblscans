@@ -240,11 +240,3 @@ function selectimg(index) {
     document.querySelector(".selectedbutton").classList.remove("selectedbutton");
     document.querySelectorAll(".buttonswitcher")[currentimage].classList.add("selectedbutton");
 }
-
-document.getElementById("slideshow-page").addEventListener("touchstart", ()=>{
-    clearInterval(intervalId);
-})
-
-document.getElementById("slideshow-page").addEventListener("touchend", ()=>{
-    intervalId = setInterval(nextimg,3000);
-})
