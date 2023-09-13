@@ -240,13 +240,6 @@ function selectimg(index) {
 }
 
 document.getElementById("slideshow-page").addEventListener("touchstart", ()=>{
-    if (currentimage == 5) {
-        currentimage = 0;
-        document.getElementById("slideshow-page").scrollTo({
-            left: width * currentimage,
-            behavior: "instant",
-        });
-    }
     clearInterval(intervalId);
 })
 
