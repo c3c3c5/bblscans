@@ -187,6 +187,7 @@ document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
 document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     let scrolled = document.getElementById("slideshow-page").scrollLeft;
     let width = window.innerWidth;
+    document.getElementById("slideshow-page").scrollWidth;
     if (scrolled >= 0 && scrolled < width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
@@ -207,39 +208,28 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
         currentimage = 4;
-    } else if (scrolled >= width + width + width + width + width/2 && scrolled < width + width + width + width + width + width/2) {
+    } else if (scrolled >= width + width + width + width + width/2 && scrolled < document.getElementById("slideshow-page").scrollWidth - document.getElementById("slideshow-page")) {
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
         currentimage = 5;
+    }
+    if (scrolled >= document.getElementById("slideshow-page").scrollWidth - document.getElementById("slideshow-page").clientWidth - 4){
+        console.log("final");
+        currentimage = 0;
+        document.getElementById("slideshow-page").scrollTo({
+            left: 0,
+            behavior: "instant",
+        });
     }
 })
 
 function nextimg() {
     let width = window.innerWidth;
-    if (currentimage == 4) {
-        clearInterval(intervalId);
-        currentimage = 5;
-        document.getElementById("slideshow-page").scrollTo({
-            left: width * currentimage,
-            behavior: "smooth",
-        });
-        setTimeout(()=>{
-            nextimg();
-            intervalId = setInterval(nextimg,3000);
-        }, 335);
-    } else if (currentimage == 5) {
-        currentimage = 0;
-        document.getElementById("slideshow-page").scrollTo({
-            left: width * currentimage,
-            behavior: "instant",
-        });
-    } else {
-        currentimage++;
-        document.getElementById("slideshow-page").scrollTo({
-            left: width * currentimage,
-            behavior: "smooth",
-        });
-    }
+    currentimage++;
+    document.getElementById("slideshow-page").scrollTo({
+        left: width * currentimage,
+        behavior: "smooth",
+    });
 }
 
 function selectimg(index) {
