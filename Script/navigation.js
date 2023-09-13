@@ -193,6 +193,10 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     let scrolled = document.getElementById("slideshow-page").scrollLeft;
     let width = window.innerWidth;
     document.getElementById("slideshow-page").scrollWidth;
+    if (scrolled >= 0 && scrolled < width/2) {
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
+    } 
     if (scrolled == 0){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
@@ -223,6 +227,9 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
         currentimage = 5;
+    } else if (scrolled >= width + width + width + width + width + width/2 && scrolled < width + width + width + width + width + width + width/2) {
+        document.querySelector(".selectedbutton").classList.remove("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
     }
     if (scrolled >= document.getElementById("slideshow-page").scrollWidth - document.getElementById("slideshow-page").clientWidth - 4){
         currentimage = 1;
