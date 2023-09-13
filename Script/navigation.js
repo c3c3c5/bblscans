@@ -246,3 +246,7 @@ function selectimg(index) {
 document.getElementById("slideshow-page").addEventListener("touchstart", ()=>{
     clearInterval(intervalId);
 })
+
+document.getElementById("slideshow-page").addEventListener("touchend", ()=>{
+    intervalId = setInterval(nextimg,3000);
+})
