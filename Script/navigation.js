@@ -216,14 +216,12 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     if (scrolled >= document.getElementById("slideshow-page").scrollWidth - document.getElementById("slideshow-page").clientWidth - 4){
         console.log("final");
         currentimage = 0;
-        clearInterval(intervalId);
         setTimeout(()=>{
             document.getElementById("slideshow-page").scrollTo({
                 left: 0,
                 behavior: "instant",
             });
         }, 100)
-        intervalId = setInterval(nextimg,3000);
     }
 })
 
