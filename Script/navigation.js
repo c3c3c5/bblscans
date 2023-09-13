@@ -202,7 +202,7 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
                 left: width * 5,
                 behavior: "instant",
             });
-        }, 85)
+        }, 100)
     } else if (scrolled >= width/2 && scrolled < width + width/2) {
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
         document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
@@ -231,7 +231,7 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
                 left: width * 1,
                 behavior: "instant",
             });
-        }, 85)
+        }, 100)
     }
 })
 
