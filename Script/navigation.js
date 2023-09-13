@@ -170,7 +170,8 @@ window.addEventListener("scroll", ()=>{
 let intervalId;
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    intervalId = setInterval(nextimg, 3000);
+    document.getElementById("slideshow-page").scrollTo(500,0);
+    //intervalId = setInterval(nextimg, 3000);
 })
 
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
