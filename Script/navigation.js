@@ -1,7 +1,7 @@
 let lightmode = localStorage.getItem("light-mode");
 let navmenu = localStorage.getItem("nav-bar");
 let focused = false;
-let currentimage = 0;
+let currentimage = 1;
 
 if (lightmode == "true"){
     document.getElementById("ball").style.transitionDuration = "0s";
@@ -170,6 +170,11 @@ window.addEventListener("scroll", ()=>{
 let intervalId;
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    let width = window.innerWidth;
+    document.getElementById("slideshow-page").scrollTo({
+        left: width * 1,
+        behavior: "instant",
+    });    
     intervalId = setInterval(nextimg, 3000);
 })
 
@@ -178,7 +183,7 @@ document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
         currentimage = i;
         let width = window.innerWidth;
         document.getElementById("slideshow-page").scrollTo({
-            left: width * i,
+            left: width * (i+1),
             behavior: "smooth",
         });
     })
@@ -188,37 +193,42 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     let scrolled = document.getElementById("slideshow-page").scrollLeft;
     let width = window.innerWidth;
     document.getElementById("slideshow-page").scrollWidth;
-    if (scrolled >= 0 && scrolled < width/2){
+    if (scrolled == 0){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-        document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
-        currentimage = 0;
+        document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
+        currentimage = 5;
+        setTimeout(()=>{
+            document.getElementById("slideshow-page").scrollTo({
+                left: width * 5,
+                behavior: "instant",
+            });
+        }, 100)
     } else if (scrolled >= width/2 && scrolled < width + width/2) {
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-        document.querySelectorAll(".buttonswitcher")[1].classList.add("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
         currentimage = 1;
     } else if (scrolled >= width + width/2 && scrolled < width + width + width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-        document.querySelectorAll(".buttonswitcher")[2].classList.add("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[1].classList.add("selectedbutton");
         currentimage = 2;
     } else if (scrolled >= width + width + width/2 && scrolled < width + width + width + width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-        document.querySelectorAll(".buttonswitcher")[3].classList.add("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[2].classList.add("selectedbutton");
         currentimage = 3;
     } else if (scrolled >= width + width + width + width/2 && scrolled < width + width + width + width + width/2){
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-        document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[3].classList.add("selectedbutton");
         currentimage = 4;
-    } else if (scrolled >= width + width + width + width + width/2 && scrolled < document.getElementById("slideshow-page").scrollWidth - document.getElementById("slideshow-page")) {
+    } else if (scrolled >= width + width + width + width + width/2 && scrolled < width + width + width + width + width + width/2) {
         document.querySelector(".selectedbutton").classList.remove("selectedbutton");
-        document.querySelectorAll(".buttonswitcher")[0].classList.add("selectedbutton");
+        document.querySelectorAll(".buttonswitcher")[4].classList.add("selectedbutton");
         currentimage = 5;
     }
     if (scrolled >= document.getElementById("slideshow-page").scrollWidth - document.getElementById("slideshow-page").clientWidth - 4){
-        console.log("final");
-        currentimage = 0;
+        currentimage = 1;
         setTimeout(()=>{
             document.getElementById("slideshow-page").scrollTo({
-                left: 0,
+                left: width * 1,
                 behavior: "instant",
             });
         }, 100)
