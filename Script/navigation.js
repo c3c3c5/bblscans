@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         left: width * 1,
         behavior: "instant",
     });    
-    //intervalId = setInterval(nextimg, 3000);
+    intervalId = setInterval(nextimg, 3000);
 })
 
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
