@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         left: width * 1,
         behavior: "instant",
     });    
-    //intervalId = setInterval(nextimg, 3000);
+    intervalId = setInterval(nextimg, 3000);
 })
 
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
@@ -242,8 +242,20 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     }
 })
 
+let leftright = false;
 document.addEventListener("keydown", (e)=>{
     console.log(e);
+    if (e.key == "ArrowRight" || e.key == "ArrowLeft") {
+        leftright = true;
+        clearInterval(intervalId);
+    }
+})
+
+document.addEventListener("keyup", ()=>{
+    if (leftright) {
+        intervalId = setInterval(nextimg,3000);
+        leftright = false;
+    }
 })
 
 function nextimg() {
