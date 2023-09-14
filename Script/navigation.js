@@ -242,6 +242,10 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
     }
 })
 
+document.addEventListener("keydown", (e)=>{
+    console.log(e);
+})
+
 function nextimg() {
     let width = window.innerWidth;
     currentimage++;
