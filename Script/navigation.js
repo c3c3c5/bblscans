@@ -180,12 +180,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
     b.addEventListener("click", ()=>{
+        clearInterval(intervalId);
         currentimage = i;
         let width = window.innerWidth;
         document.getElementById("slideshow-page").scrollTo({
             left: width * (i+1),
             behavior: "smooth",
         });
+        intervalId = setInterval(nextimg,3000);
     })
 })
 
