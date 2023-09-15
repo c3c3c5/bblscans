@@ -187,7 +187,7 @@ document.querySelectorAll(".buttonswitcher").forEach((b,i)=>{
             left: width * (i+1),
             behavior: "smooth",
         });
-        intervalId = setInterval(nextimg,3000);
+        //intervalId = setInterval(nextimg,3000);
     })
 })
 
@@ -241,22 +241,6 @@ document.getElementById("slideshow-page").addEventListener("scroll", ()=>{
                 behavior: "instant",
             });
         }, 100)
-    }
-})
-
-let leftright = false;
-document.addEventListener("keydown", (e)=>{
-    console.log(e);
-    if (e.key == "ArrowRight" || e.key == "ArrowLeft") {
-        leftright = true;
-        clearInterval(intervalId);
-    }
-})
-
-document.addEventListener("keyup", ()=>{
-    if (leftright) {
-        intervalId = setInterval(nextimg,3000);
-        leftright = false;
     }
 })
 
