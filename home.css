@@ -1195,7 +1195,6 @@ main {
         border-radius: 0.375rem;
         box-shadow: 0px 0px 5px #1E1F22;
         z-index: 1;
-        transform: rotateY(-45deg);
     }
 
     .slideshowtitle, .slideshowtype {
@@ -1278,19 +1277,5 @@ main {
 
     #sololevelingtext {
         text-shadow: 1px 1px 2px red, 0 0 0.2em blue;
-    }
-
-    .testing {
-        opacity: 1;
-        left: 45%;
-        top: 45px;
-        object-fit: contain;
-        transform: translateX(-2rem);
-        rotate: y -20deg;
-        height: 250px;
-        position: absolute;
-        border-radius: 0rem;
-        box-shadow: none;
-        z-index: 1;
     }
 }
